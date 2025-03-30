@@ -1,0 +1,75 @@
+body {
+  margin: 0; 
+  overflow: hidden; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+  background-color: black; 
+}
+
+@media (max-height: 600px) {
+  canvas {
+    scale: 0.5;
+    transition: all 0.3s;
+  }
+}
+
+@media (max-height: 300px) {
+  canvas {
+    scale: 0.35;
+    transition: all 0.3s;
+  }
+}
+
+@media (max-width: 1050px) {
+  body {
+    scale: 0.5;
+    transition: all 0.3s;
+  }
+}
+
+@media (max-width: 570px) {
+  body {
+    scale: 0.35;
+    transition: all 0.3s;
+  }
+}
+
+@media (max-width: 380px) {
+  body {
+    scale: 0.15;
+    transition: all 0.3s;
+  }
+}
+        
+canvas { 
+  background: white; 
+}
+        
+.score-management {  
+  color: white; 
+  font-size: 20px; 
+  font-family: Arial, sans-serif; 
+  margin-left: 40px;
+  font-family: Kanit, arial;
+  font-size: 26px;
+}
+
+.reset-score {
+  font-family: Kanit, arial;
+  font-size: 20px;
+  margin-top: 10px;
+  padding: 5px;
+  cursor: pointer
+}
+
+.reset-score:hover {
+  scale: 1.05;
+  transition: all 0.3s;
+}
+
+.reset-score:active {
+  opacity: 0.6;
+  transition: all 0.3s;
+}
