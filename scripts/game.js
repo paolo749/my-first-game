@@ -1,6 +1,7 @@
 let score = JSON.parse(localStorage.getItem('score'));
 
-const coinSoundEffect = new Audio('/my-first-game/sound-effects/coin-sound-effect.mp3')
+const coinSoundEffect = new Audio('my-first-game/sound-effects/coin-sound-effect.mp3')
+const BuyItem = new Audio('my-first-game/sound-effects/buy-item.mp3')
 
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
@@ -25,7 +26,7 @@ renderScore(score)
 const player = {
     x: canvas.width / 2,
     y: canvas.height / 2,
-    size: 30,
+    size: JSON.parse(localStorage.getItem('playerSize')) || 30,
     speed: 5,
     dx: 0,
     dy: 0
@@ -118,3 +119,40 @@ function gameLoop() {
 }
 
 gameLoop();
+
+// SHOP SECTION
+
+const shopButtonElement = document.querySelector('.js-test-item')
+shopButtonElement.addEventListener('click', () => {
+    if (player.size === 50) {
+      alert('Hai già comprato questo potenziamento.')
+      return;
+    }
+
+    if (score < 10) {
+      alert('Non hai abbastanza monete!')
+      return;
+    }
+
+    BuyItem.play();
+
+    score = score - 10;
+    player.size = 50;
+    renderScore(score);
+
+    localStorage.setItem('playerSize', JSON.stringify(player.size))
+})
+
+const restoreButtonElement = document.querySelector('.js-restore-purchases')
+restoreButtonElement.addEventListener('click', () => {
+    if (player.size === 30) {
+        alert('Non hai comprato questo potenziamento')
+        return;
+    }
+
+    score += 10;
+    renderScore(score);
+    player.size = 30;
+    localStorage.removeItem('playerSize')
+    localStorage.setItem('playerSize', JSON.stringify(player.size))
+})

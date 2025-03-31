@@ -42,21 +42,33 @@ body {
     transition: all 0.3s;
   }
 }
-        
+
+p {
+  margin: 0px;
+}
+
 canvas { 
   background: white; 
 }
         
 .score-management {  
   color: white; 
-  font-size: 20px; 
   font-family: Arial, sans-serif; 
   margin-left: 40px;
   font-family: Kanit, arial;
   font-size: 26px;
 }
 
-.reset-score {
+.shop {
+  margin-top: 70px;
+  color: white; 
+  font-family: Arial, sans-serif; 
+  margin-left: 40px;
+  font-family: Kanit, arial;
+  font-size: 26px;
+}
+
+.button {
   font-family: Kanit, arial;
   font-size: 20px;
   margin-top: 10px;
@@ -64,12 +76,12 @@ canvas {
   cursor: pointer
 }
 
-.reset-score:hover {
+.button:hover {
   scale: 1.05;
   transition: all 0.3s;
 }
 
-.reset-score:active {
+.button:active {
   opacity: 0.6;
   transition: all 0.3s;
 }
