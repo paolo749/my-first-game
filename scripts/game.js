@@ -1,7 +1,7 @@
 let score = JSON.parse(localStorage.getItem('score'));
 
-const coinSoundEffect = new Audio('https://raw.githubusercontent.com/paolo749/my-first-game/main/sound-effects/coin-sound-effect.mp3')
-const BuyItem = new Audio('https://raw.githubusercontent.com/paolo749/my-first-game/main/sound-effects/buy-item.mp3')
+const coinSoundEffect = new Audio('sound-effects/coin-sound-effect.mp3')
+const BuyItem = new Audio('sound-effects/buy-item.mp3')
 
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
